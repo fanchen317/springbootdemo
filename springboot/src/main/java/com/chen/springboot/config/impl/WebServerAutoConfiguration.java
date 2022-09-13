@@ -1,6 +1,7 @@
-package com.chen.springboot.config;
+package com.chen.springboot.config.impl;
 
 import com.chen.springboot.condition.ChenConditionalOnClass;
+import com.chen.springboot.config.AutoConfiguration;
 import com.chen.springboot.webserver.impl.JettyWebServer;
 import com.chen.springboot.webserver.impl.TomcatWebServer;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  * @Date 2022/9/7 11:06
  */
 @Configuration
-public class WebServerAutoConfiguration {
+public class WebServerAutoConfiguration implements AutoConfiguration {
     @Bean
     @ChenConditionalOnClass(name = "org.apache.catalina.startup.Tomcat")
     public TomcatWebServer tomcatWebServer() {

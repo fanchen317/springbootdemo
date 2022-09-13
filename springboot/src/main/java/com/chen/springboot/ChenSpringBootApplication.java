@@ -1,6 +1,6 @@
 package com.chen.springboot;
 
-import com.chen.springboot.config.WebServerAutoConfiguration;
+import com.chen.springboot.config.impl.WebServerAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -18,7 +18,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Configuration
 @ComponentScan //指定扫描路径
-@Import(WebServerAutoConfiguration.class)
+@Import(ChenImportSelect.class)
 public @interface ChenSpringBootApplication {
 
 }
