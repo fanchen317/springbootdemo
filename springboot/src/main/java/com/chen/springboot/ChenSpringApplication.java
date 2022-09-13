@@ -18,7 +18,7 @@ public class ChenSpringApplication {
         applicationContext.refresh(); //解析类上的注解
 
         WebServer webServer = getWebServer(applicationContext);
-//        webServer.start(applicationContext);
+        webServer.start(applicationContext);
     }
 
     public static  WebServer getWebServer(ApplicationContext applicationContext){
